@@ -28,12 +28,27 @@
     </header>
     <div class="main-content">
       <div class="content-page">
+        <section>
+            <div class="part1">
+                <img id="idimg" src="" alt="">
+            </div>
+            <div class="part2">
+                <h2 id="idtitle"></h2>
+                <h3 id="idprice"></h3>
+                <h4 id="iddescription"></h4>
+                <button>Comprar</button>
+            </div>
+
+        </section>
         <div class="title-section">Productos</div>
         <div class="products-list" id="space-list">
 
         </div>
       </div>
     </div>
+    <script>
+        let p='<?php echo $_GET["p"]; ?>';
+    </script>
     <script type="text/javascript">
       $(document).ready(function () {
         $.ajax({
@@ -44,9 +59,17 @@
             console.log(data);
             let html = "";
             for (let i = 0; i < data.datos.length; i++) {
-              html +=
+                if (data.datos[i].codpro==p) {
+                    document.getElementById("idimg").src=data.datos[i].rutimapro;
+                    document.getElementById("idtitle").innerHTML=data.datos[i].nompro;
+                    document.getElementById("idprice").innerHTML=data.datos[i].prepro;
+                    document.getElementById("iddescription").innerHTML=data.datos[i].despro;
+                    
+                    
+                }
+                html +=
                 '<div class="product-box">' +
-                '<a href="">' +
+                '<a href="producto.php?p='+data.datos[i].codpro+'">' +
                 '<div class="product">' +
                 '<img src="' +
                 data.datos[i].rutimapro +

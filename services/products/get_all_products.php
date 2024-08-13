@@ -8,6 +8,7 @@ $sql="select * from producto where estado=1";
 $result=mysqli_query($con, $sql);
 while($row=mysqli_fetch_array($result)){
     $obj=new stdClass();
+    $obj->codpro=$row['codpro'];
     $obj->nompro=$row['nompro'];
     $obj->despro=$row['despro'];
     $obj->prepro=$row['prepro'];
