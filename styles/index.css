@@ -144,3 +144,55 @@ header {
 .detail-price span {
   font-size: 15px;
 }
+
+#icon-fa {
+  color: #ffffff;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.body-pedidos {
+  width: 100%;
+}
+
+.item-pedido {
+  display: flex;
+  border: 1px #ccc solid;
+  margin-bottom: 5px;
+}
+
+.pedido-img {
+  width: 200px;
+}
+
+.pedido-img img {
+  width: 100%;
+}
+.pedido-detalle {
+  padding: 10px;
+  width: calc(100% - 220px);
+  background: #fff;
+}
+
+button {
+  border-style: none;
+  border-radius: 15px;
+  padding: 13px 20px;
+  color: #ffffff;
+  background: #d86a6a;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pedido-detalle h3,
+.pedido-detalle p {
+  margin: 5px;
+}
+
+.inp-buy {
+  width: 150px;
+  margin-bottom: 5px;
+}

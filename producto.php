@@ -15,16 +15,14 @@
       href="https://fonts.googleapis.com/css?family=Sen&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="font-awesome-4.7.0/css/font-awesome.min.css"
-    />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <link rel="stylesheet" type="text/css" href="styles/index.css" />
   </head>
   <body>
-    <header>
+    <header class="header-container">
       <div class="logo-place"><img src="assets/logo.png" alt="logo" /></div>
+      <div><a href="carrito.php"><i class="fa fa-shopping-cart" id="icon-fa" aria-hidden="true"></i></a></div>
     </header>
     <div class="main-content">
       <div class="content-page">
@@ -104,7 +102,7 @@
           },
           success: function (data) {
             if (data.state) {
-              
+              alert(data.detail);
             } else {
               alert(data.detail);
               if (data.open_login) {
