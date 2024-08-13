@@ -36,7 +36,7 @@
                 <h2 id="idtitle"></h2>
                 <h3 id="idprice"></h3>
                 <h4 id="iddescription"></h4>
-                <button>Comprar</button>
+                <button onclick="iniciar_compra()">Comprar</button>
             </div>
 
         </section>
@@ -94,6 +94,32 @@
           },
         });
       });
+
+      function iniciar_compra() {
+                $.ajax({
+          url: "services/buy/validar_inicio_compra.php",
+          type: "POST",
+          data: {
+            codpro:p
+          },
+          success: function (data) {
+            if (data.state) {
+              
+            } else {
+              alert(data.detail);
+              if (data.open_login) {
+                open_login()
+              }
+            }
+          },
+          error:function(err){
+            console.error(err)
+          }
+      })}
+
+      function open_login(){
+        window.location.href="login.php"
+      }
     </script>
   </body>
 </html>

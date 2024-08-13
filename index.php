@@ -24,7 +24,10 @@
   </head>
   <body>
     <header>
-      <div class="logo-place"><img src="assets/logo.png" alt="logo" /></div>
+      <div class="logo-place"><a href="index.php">
+        <img src="assets/logo.png" alt="logo" />
+      </a>
+    </div>
     </header>
     <div class="main-content">
       <div class="content-page">
