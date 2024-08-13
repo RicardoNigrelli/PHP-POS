@@ -29,20 +29,8 @@
     <div class="main-content">
       <div class="content-page">
         <div class="title-section">Productos</div>
-        <div class="products-list">
-          <div class="product-box">
-            <a href="">
-              <div class="product">
-                <img
-                  src="https://acdn.mitiendanube.com/stores/783/019/products/papel-crepe1-cdd03a8f3adaacd3a415967329415920-640-0.jpg"
-                  alt=""
-                />
-                <div class="detail-title">Papel Crepe</div>
-                <div class="detail-description">Ideal para decoraciones</div>
-                <div class="detail-price">S/. 14. <span>99</span></div>
-              </div>
-            </a>
-          </div>
+        <div class="products-list" id="space-list">
+
         </div>
       </div>
     </div>
@@ -56,27 +44,27 @@
             console.log(data);
             let html = "";
             for (let i = 0; i < data.datos.length; i++) {
-              html += 
-                <div class="product-box"> +
-                  <a href="">
-                    <div class="product">
-                      <img
-                        src="https://acdn.mitiendanube.com/stores/783/019/products/papel-crepe1-cdd03a8f3adaacd3a415967329415920-640-0.jpg"
-                        alt=""
-                      />
-                      <div class="detail-title">Papel Crepe</div>
-                      <div class="detail-description">
-                        Ideal para decoraciones
-                      </div>
-                      <div class="detail-price">
-                        S/. 14. <span>99</span>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              
-              data.datos[i];
+              html +=
+                '<div class="product-box">' +
+                '<a href="">' +
+                '<div class="product">' +
+                '<img src="' +
+                data.datos[i].rutimapro +
+                '" alt="" />' +
+                '<div class="detail-title">' +
+                data.datos[i].nompro +
+                "</div>" +
+                '<div class="detail-description">' +
+                data.datos[i].despro +
+                "</div>" +
+                '<div class="detail-price"> $' +
+                data.datos[i].prepro +
+                "</div>" +
+                "</div>" +
+                "</a>" +
+                "</div>";
             }
+            document.getElementById("space-list").innerHTML=html;
           },
           error: function (error) {
             console.error(error);
