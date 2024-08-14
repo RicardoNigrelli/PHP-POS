@@ -197,10 +197,29 @@ button {
   margin-bottom: 5px;
 }
 
- .container-monto {
+.container-monto {
             display: flex;
             align-items: center;
         }
         .container-monto h2 {
             margin: 10px 0; 
         }
+
+.metodo-pago {
+  display: flex;
+  width: 100%;
+}
+
+input [type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px 5px 5px;
+}
+
+.metodo-pago label {
+  width: calc(100% - 30px);
+}
+
+.content-page h4 {
+  margin: 5px 0;
+}

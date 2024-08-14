@@ -29,7 +29,7 @@
   <body>
     <header class="header-container">
       <div class="logo-place"><img src="assets/logo.png" alt="logo" /></div>
-      <div><a href="pedidos.php"><i class="fa fa-shopping-cart" id="icon-fa" aria-hidden="true"></i></a></div>
+      <div><a href="carrito.php"><i class="fa fa-shopping-cart" id="icon-fa" aria-hidden="true"></i></a></div>
     </header>
     <div class="main-content">
     <div class="content-page">

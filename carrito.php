@@ -41,7 +41,16 @@
         <br>
         <input class="inp-buy" type="text" id="telusu" placeholder="Telefono">
         <br>
-        <button onclick="procesar_compra()">Procesar compra</button>
+        <h4>Forma de pago</h4>
+        <div class="metodo-pago">
+                    <input type="radio" name="tipopago" value="1" id="tipo1">
+          <label for="tipo1">Pago por transferencia</label>
+                    <input type="radio" name="tipopago" value="2" id="tipo2">
+          <label for="tipo2">Pago en Efectivo</label>
+                    <input type="radio" name="tipopago" value="3" id="tipo3">
+          <label for="tipo3">Pago por Mercado Pago</label>
+        </div>
+        <button onclick="procesar_compra()" style="margin-top: 10px;">Procesar compra</button>
     </div>
     </div>
     <script type="text/javascript">
@@ -53,6 +62,7 @@
           success: function (data) {
             console.log(data);
             let html = "";
+            let sumaMonto=0
             for (let i = 0; i < data.datos.length; i++) {
               html +=
                 '<div class="item-pedido">'+
@@ -69,7 +79,7 @@
                         
                     '</div>'+
                 '</div>';
-            
+              sumaMonto+=parseInt()
             }
             document.getElementById("space-list").innerHTML=html;
           },
@@ -81,20 +91,31 @@
       function procesar_compra () {
         let dirusu=document.getElementById("dirusu").value;
         let telusu=$("#telusu").val();
+        let tipopago=1;
+        if (document.getElementById("tipo2").checked){
+          tipopago=2;
+        }
+        if (document.getElementById("tipo3").checked){
+          tipopago=3;
+        }
         if (dirusu=="" || telusu=="") {
         alert("Complete los campos")
       }else{
-        $.ajax({
-          url: "services/pedido/confirm.php",
-          type: "POST",
-          data: {
-            dirusu: dirusu,
-            telusu: telusu
+        if (!document.getElementById("tipo1").checked && !document.getElementById("tipo2").checked && !document.getElementById("tipo3").checked) {
+          alert("Seleccione un método de pago")
+        } else {
+          $.ajax({
+            url: "services/pedido/confirm.php",
+            type: "POST",
+            data: {
+              dirusu: dirusu,
+              telusu: telusu,
+              tipopago: tipopago
           },
           success: function (data) {
             console.log(data);
             if(data.state) {
-                window.location.href="pedido.php";
+              window.location.href="pedido.php";
             } else {
               alert(data.detail);
             }
@@ -103,6 +124,7 @@
             console.error(error);
           },
         });
+      }
       }
     }
     </script>
