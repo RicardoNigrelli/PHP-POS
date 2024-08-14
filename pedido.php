@@ -37,12 +37,13 @@
             <div class="body-pedidos" id="space-list">
 
             </div>
-        <input class="inp-buy" type="text" id="dirusu" placeholder="Direccion">
-        <br>
-        <input class="inp-buy" type="text" id="telusu" placeholder="Telefono">
-        <br>
+        <div class="container-monto">
+          <h2>Monto Total: $</h2>
+          <h2 id="montototal"> </h2>
+        </div>
         <button onclick="procesar_compra()">Procesar compra</button>
     </div>
+
     </div>
     <script type="text/javascript">
      $(document).ready(function () {
@@ -53,6 +54,7 @@
           success: function (data) {
             console.log(data);
             let html = "";
+            let monto=0;
             for (let i = 0; i < data.datos.length; i++) {
               html +=
                 '<div class="item-pedido">'+
@@ -69,9 +71,13 @@
                         
                     '</div>'+
                 '</div>';
-            
+                if (data.datos[i].estado=="Por pagar") {
+                  monto+=parseFloat(data.datos[i].prepro);
+                }
             }
             document.getElementById("space-list").innerHTML=html;
+            document.getElementById("montototal").innerHTML=monto;
+
           },
           error: function (error) {
             console.error(error);

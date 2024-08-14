@@ -10,6 +10,15 @@ function estado2texto($id){
         case '2':
             return "Por pagar";
             break;
+        case '3':
+            return "Por entregar";
+            break;
+        case '4':
+            return "En camino";
+            break;
+        case '5':
+            return "Entregado";
+            break;
         default:
             break;
     }

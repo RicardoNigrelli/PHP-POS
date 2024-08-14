@@ -196,3 +196,11 @@ button {
   width: 150px;
   margin-bottom: 5px;
 }
+
+ .container-monto {
+            display: flex;
+            align-items: center;
+        }
+        .container-monto h2 {
+            margin: 10px 0; 
+        }
