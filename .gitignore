@@ -1,0 +1,9 @@
+*.xml
+*.txt
+*.pem
+*.key
+*.crt
+*.cs
+*.cnf
+
+/prev-files
