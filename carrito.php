@@ -51,6 +51,7 @@
           <label for="tipo3">Pago por Mercado Pago</label>
         </div>
         <button onclick="procesar_compra()" style="margin-top: 10px;">Procesar compra</button>
+        <button onclick="" id="afip-button"> Generar Factura </button>
     </div>
     </div>
     <script type="text/javascript">
@@ -127,6 +128,9 @@
       }
       }
     }
+
+
+    
     </script>
   </body>
 </html>

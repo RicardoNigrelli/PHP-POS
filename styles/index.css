@@ -187,6 +187,16 @@ button {
   font-size: 16px;
 }
 
+#afip-button {
+  border-style: none;
+  border-radius: 15px;
+  padding: 13px 20px;
+  color: #ffffff;
+  background: #554fa7;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 .pedido-detalle h3,
 .pedido-detalle p {
   margin: 5px;
@@ -198,12 +208,12 @@ button {
 }
 
 .container-monto {
-            display: flex;
-            align-items: center;
-        }
-        .container-monto h2 {
-            margin: 10px 0; 
-        }
+  display: flex;
+  align-items: center;
+}
+.container-monto h2 {
+  margin: 10px 0;
+}
 
 .metodo-pago {
   display: flex;
